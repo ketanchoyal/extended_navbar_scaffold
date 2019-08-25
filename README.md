@@ -2,9 +2,9 @@
 
 [![Pub](https://img.shields.io/pub/v/extended_navbar_scaffold)](https://pub.dartlang.org/packages/extended_navbar_scaffold)
 
-Custom Extended Bottom Navigation Bar
+Custom Extended Sacffold
 
-Custom Flutter widgets that makes Bottom Navigation Floating and can be extended with much cleaner and easier way.
+Custom Flutter widgets that makes Bottom Navigation Floating and can be expanded with much cleaner and easier way.
 
 ## Installing
 
@@ -107,10 +107,10 @@ Add the following to your `pubspec.yaml` file:
 
 ## Screenshots
 
-#Implementation
+# Implementation
 
-<img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/master/ScreenShots/implementation.gif" alt="Implementation/>
+<img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/dev/ScreenShots/implementation.gif" alt="Implementation"/>
 
-#Widget Demo
+# Widget Demo
 
 <img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/master/ScreenShots/demo.gif" alt="Demo"/>
