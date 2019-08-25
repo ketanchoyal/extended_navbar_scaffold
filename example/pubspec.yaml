@@ -1,0 +1,25 @@
+name: example
+description: A new Flutter project.
+
+author: Ketan Choyal <ketanchoyal@gmail.com>
+homepage: https://github.com/ketanchoyal/
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  extended_navbar_scaffold:
+    path: ../
+  cupertino_icons: ^0.1.2
+  flutter_vector_icons: ^0.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

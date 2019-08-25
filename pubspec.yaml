@@ -1,0 +1,22 @@
+name: extended_navbar_scaffold
+description: A Custom Extended and Floating Navigation Bar Scaffold
+version: 1.0.0
+
+author: Ketan Choyal <ketanchoyal@gmail.com>
+homepage: https://github.com/ketanchoyal/
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  eva_icons_flutter: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
