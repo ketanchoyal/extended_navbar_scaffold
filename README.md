@@ -2,7 +2,7 @@
 
 [![Pub](https://img.shields.io/pub/v/extended_navbar_scaffold)](https://pub.dartlang.org/packages/extended_navbar_scaffold)
 
-Custom Extended Sacffold
+Custom Extended Scaffold
 
 Custom Flutter widgets that makes Bottom Navigation Floating and can be expanded with much cleaner and easier way.
 
