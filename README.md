@@ -109,8 +109,8 @@ Add the following to your `pubspec.yaml` file:
 
 #Implementation
 
-<img src="" alt="Implementation/>
+<img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/master/ScreenShots/implementation.gif" alt="Implementation/>
 
 #Widget Demo
 
-<img src="https://github.com/ketanchoyal/custom_radio_grouped_button/raw/dev/ScreenShots/RadioButton.gif" alt="Demo"/>
+<img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/master/ScreenShots/demo.gif" alt="Demo"/>
