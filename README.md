@@ -109,7 +109,7 @@ Add the following to your `pubspec.yaml` file:
 
 #Implementation
 
-<img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/master/ScreenShots/implementation.gif" alt="Implementation/>
+<img src="https://github.com/ketanchoyal/extended_navbar_scaffold/raw/dev/ScreenShots/implementation.gif" alt="Implementation/>
 
 #Widget Demo
 
