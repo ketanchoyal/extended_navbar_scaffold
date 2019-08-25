@@ -3,7 +3,7 @@ description: A Custom Extended Scaffold with Expandable and Floating Navigation 
 version: 1.0.0
 
 author: Ketan Choyal <ketanchoyal@gmail.com>
-homepage: https://github.com/ketanchoyal/
+homepage: https://github.com/ketanchoyal/extended_navbar_scaffold
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
