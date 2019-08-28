@@ -460,9 +460,9 @@ class _CustomBottomNavigationBar extends StatelessWidget {
               _buildBackgroundForParallexCard(context),
               _builtSearchBar(),
               _buildOtherButtons(context),
-              isBottomBarParallexOpen
-                  ? _buildParallexCards(context)
-                  : Container(),
+
+              _buildParallexCards(context),
+              // : Container(),
               _buildMoreExpandedCard(context),
               _buildCenterButton(context),
             ],
@@ -473,16 +473,12 @@ class _CustomBottomNavigationBar extends StatelessWidget {
   }
 
   Widget _builtSearchBar() {
-    return Visibility(
-      // maintainAnimation: true,
-      // maintainInteractivity: false,
-      // maintainSize: false,
-      // maintainState: true,
-      visible: isBottomBarSearchOpen,
-      child: Positioned(
-        left: 50 - 50 * currentBottomBarSearchPercentage,
-        right: 50 - 50 * currentBottomBarSearchPercentage,
-        bottom: 0 + 55 * currentBottomBarSearchPercentage,
+    return Positioned(
+      left: 50 - 50 * currentBottomBarSearchPercentage,
+      right: 50 - 50 * currentBottomBarSearchPercentage,
+      bottom: 0 + 55 * currentBottomBarSearchPercentage,
+      child: Opacity(
+        opacity: currentBottomBarSearchPercentage,
         child: searchWidget ?? Container(),
       ),
     );
@@ -805,7 +801,7 @@ class _CustomBottomNavigationBar extends StatelessWidget {
 
   Widget _buildParallexCards(BuildContext context) {
     return Positioned(
-      bottom: 30 * currentBottomBarParallexPercentage,
+      bottom: 30, // * currentBottomBarParallexPercentage,
       left: 0,
       right: 0,
       child: Container(

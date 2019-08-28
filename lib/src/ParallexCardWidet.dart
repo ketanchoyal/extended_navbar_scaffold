@@ -5,14 +5,16 @@ class ParallaxCardItem {
     this.title,
     this.body,
     this.background,
+    this.data,
   });
 
   final String title;
   final String body;
   final Widget background;
+  final dynamic data;
 }
 
-class ParallaxCardsWidget extends StatefulWidget {
+class ParallaxCardsWidget extends StatelessWidget {
   ParallaxCardsWidget({
     @required this.item,
     @required this.pageVisibility,
@@ -21,21 +23,20 @@ class ParallaxCardsWidget extends StatefulWidget {
   final ParallaxCardItem item;
   final PageVisibility pageVisibility;
 
-  @override
-  _ParallaxCardsWidgetState createState() => _ParallaxCardsWidgetState();
-}
+//   @override
+//   _ParallaxCardsWidgetState createState() => _ParallaxCardsWidgetState();
+// }
 
-class _ParallaxCardsWidgetState extends State<ParallaxCardsWidget> {
+// class _ParallaxCardsWidgetState extends State<ParallaxCardsWidget> {
 
   Widget _applyTextEffects({
     @required double translationFactor,
     @required Widget child,
   }) {
-    final double xTranslation =
-        widget.pageVisibility.pagePosition * translationFactor;
+    final double xTranslation = pageVisibility.pagePosition * translationFactor;
 
     return Opacity(
-      opacity: widget.pageVisibility.visibleFraction,
+      opacity: pageVisibility.visibleFraction,
       child: Transform(
         alignment: FractionalOffset.topLeft,
         transform: Matrix4.translationValues(
@@ -54,7 +55,7 @@ class _ParallaxCardsWidgetState extends State<ParallaxCardsWidget> {
       child: Padding(
         padding: EdgeInsets.all(3.0),
         child: Text(
-          widget.item.body,
+          item.body,
           style: ktitleStyle.copyWith(
             color: Colors.white,
             // fontWeight: FontWeight.w600,
@@ -70,7 +71,7 @@ class _ParallaxCardsWidgetState extends State<ParallaxCardsWidget> {
       child: Padding(
         padding: EdgeInsets.all(3.0),
         child: Text(
-          widget.item.title,
+          item.title,
           style: ksubtitleStyle.copyWith(
             color: Colors.white,
             // fontWeight: FontWeight.w700,
@@ -97,10 +98,10 @@ class _ParallaxCardsWidgetState extends State<ParallaxCardsWidget> {
     );
   }
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +137,7 @@ class _ParallaxCardsWidgetState extends State<ParallaxCardsWidget> {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              widget.item.background,
+              item.background,
               // centerMarker,
               imageOverlayGradient,
               _buildTextContainer(context),
