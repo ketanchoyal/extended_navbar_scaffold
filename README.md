@@ -1,6 +1,9 @@
 # extended_navbar_scaffold
 
-[![Pub](https://img.shields.io/pub/v/extended_navbar_scaffold)](https://pub.dartlang.org/packages/extended_navbar_scaffold)
+[![Pub](https://img.shields.io/pub/v/extended_navbar_scaffold)](https://pub.dartlang.org/packages/extended_navbar_scaffold) 
+<a href="https://flutterawesome.com/a-custom-extended-scaffold-with-expandable-and-floating-navigation-bar/">
+   <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
+</a>
 
 Custom Extended Scaffold
 
