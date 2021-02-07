@@ -10,6 +10,6 @@ Features:
 
 Parallex Card Performance improved.
 
-## [1.0.2] - Frb 207, 2021
+## [1.0.2] - Feb 07, 2021
 
 Added support for dark mode
