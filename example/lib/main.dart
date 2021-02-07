@@ -11,7 +11,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        // fontFamily: 'K2D',
+        pageTransitionsTheme: PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        }),
+        // primaryColor: Kcolors.primary,
+        // primaryColorDark: Kcolors.primaryDark,
+        // primarySwatch: Colors.deepOrange,
+        // primaryColor: Colors.black,
+        // brightness: Brightness.dark,
+        // accentColor: Colors.black,
+        // canvasColor: Colors.white12,
+
+        primaryColor: Colors.white,
+        brightness: Brightness.light,
+        accentColor: Colors.white,
       ),
       home: ExtendedNavBar(),
     );
@@ -49,8 +64,8 @@ class _ExtendedNavBarState extends State<ExtendedNavBar> {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      navBarColor: Colors.white,
-      navBarIconColor: Colors.black,
+      // navBarColor: Colors.white,
+      // navBarIconColor: Colors.black,
       moreButtons: [
         MoreButtonModel(
           icon: MaterialCommunityIcons.wallet,
@@ -101,7 +116,9 @@ class _ExtendedNavBarState extends State<ExtendedNavBar> {
       parallexCardPageTransformer: PageTransformer(
         pageViewBuilder: (context, visibilityResolver) {
           return PageView.builder(
-            controller: PageController(viewportFraction: 0.85),
+            physics: AlwaysScrollableScrollPhysics(),
+            pageSnapping: true,
+            controller: PageController(viewportFraction: 0.9),
             itemCount: parallaxCardItemsList.length,
             itemBuilder: (context, index) {
               final item = parallaxCardItemsList[index];

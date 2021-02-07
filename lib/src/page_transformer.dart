@@ -121,6 +121,7 @@ class _PageTransformerState extends State<PageTransformer> {
             viewPortFraction: viewPortFraction,
           );
         });
+        return true;
       },
       child: pageView,
     );

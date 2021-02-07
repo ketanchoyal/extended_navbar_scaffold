@@ -1,8 +1,7 @@
 name: extended_navbar_scaffold
 description: A Custom Extended Scaffold with Expandable and Floating Navigation Bar
-version: 1.0.1
+version: 1.0.2
 
-author: Ketan Choyal <ketanchoyal@gmail.com>
 homepage: https://github.com/ketanchoyal/extended_navbar_scaffold
 
 environment:

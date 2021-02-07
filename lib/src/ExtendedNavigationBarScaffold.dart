@@ -1,8 +1,8 @@
 part of extended_navbar_scaffold;
 
-double bottomBarVisibleHeight = 55.0;
-double bottomBarOriginalHeight = 80.0;
-double bottomBarExpandedHeight = 300.0;
+double _bottomBarVisibleHeight = 55.0;
+double _bottomBarOriginalHeight = 80.0;
+double _bottomBarExpandedHeight = 300.0;
 
 class MoreButtonModel {
   final IconData icon;
@@ -99,7 +99,7 @@ class _ExtendedNavigationBarScaffoldState
         min(
           1.0,
           offsetBottomBarParallex /
-              (bottomBarExpandedHeight - bottomBarOriginalHeight),
+              (_bottomBarExpandedHeight - _bottomBarOriginalHeight),
         ),
       );
   bool isBottomBarParallexOpen = false;
@@ -107,8 +107,8 @@ class _ExtendedNavigationBarScaffoldState
 
   void onParallexVerticalDragUpdate(details) {
     offsetBottomBarParallex -= details.delta.dy;
-    if (offsetBottomBarParallex > bottomBarExpandedHeight) {
-      offsetBottomBarParallex = bottomBarExpandedHeight;
+    if (offsetBottomBarParallex > _bottomBarExpandedHeight) {
+      offsetBottomBarParallex = _bottomBarExpandedHeight;
     } else if (offsetBottomBarParallex < 0) {
       offsetBottomBarParallex = 0;
     }
@@ -143,7 +143,7 @@ class _ExtendedNavigationBarScaffoldState
         parent: animationControllerBottomBarParallex, curve: Curves.ease);
     animationParallex = Tween(
             begin: offsetBottomBarParallex,
-            end: open ? bottomBarExpandedHeight : 0.0)
+            end: open ? _bottomBarExpandedHeight : 0.0)
         .animate(curve)
           ..addListener(() {
             setState(() {
@@ -167,7 +167,7 @@ class _ExtendedNavigationBarScaffoldState
         min(
           1.0,
           offsetBottomBarMore /
-              (bottomBarExpandedHeight - bottomBarOriginalHeight),
+              (_bottomBarExpandedHeight - _bottomBarOriginalHeight),
         ),
       );
   bool isBottomBarMoreOpen = false;
@@ -175,8 +175,8 @@ class _ExtendedNavigationBarScaffoldState
 
   void onMoreVerticalDragUpdate(details) {
     offsetBottomBarMore -= details.delta.dy;
-    if (offsetBottomBarMore > bottomBarExpandedHeight) {
-      offsetBottomBarMore = bottomBarExpandedHeight;
+    if (offsetBottomBarMore > _bottomBarExpandedHeight) {
+      offsetBottomBarMore = _bottomBarExpandedHeight;
     } else if (offsetBottomBarMore < 0) {
       offsetBottomBarMore = 0;
     }
@@ -207,7 +207,7 @@ class _ExtendedNavigationBarScaffoldState
         parent: animationControllerBottomBarMore, curve: Curves.ease);
     animationMore = Tween(
             begin: offsetBottomBarMore,
-            end: open ? bottomBarExpandedHeight : 0.0)
+            end: open ? _bottomBarExpandedHeight : 0.0)
         .animate(curve)
           ..addListener(
             () {
@@ -242,8 +242,8 @@ class _ExtendedNavigationBarScaffoldState
 
   void onSearchVerticalDragUpdate(details) {
     offsetBottomBarSearch -= details.delta.dy;
-    if (offsetBottomBarSearch > bottomBarExpandedHeight) {
-      offsetBottomBarSearch = bottomBarExpandedHeight;
+    if (offsetBottomBarSearch > _bottomBarExpandedHeight) {
+      offsetBottomBarSearch = _bottomBarExpandedHeight;
     } else if (offsetBottomBarSearch < 0) {
       offsetBottomBarSearch = 0;
     }
@@ -447,14 +447,14 @@ class _CustomBottomNavigationBar extends StatelessWidget {
           ),
         ),
         child: SizedBox(
-          height: bottomBarOriginalHeight +
+          height: _bottomBarOriginalHeight +
               //* Increase height when parallex card is expanded *//
-              (bottomBarExpandedHeight - bottomBarOriginalHeight) *
+              (_bottomBarExpandedHeight - _bottomBarOriginalHeight) *
                   currentBottomBarParallexPercentage +
               //* Increase height when More Button is expanded *//
-              (bottomBarExpandedHeight) * currentBottomBarMorePercentage +
+              (_bottomBarExpandedHeight) * currentBottomBarMorePercentage +
               //* Increase Height For Search Bar */
-              (bottomBarExpandedHeight) * currentBottomBarSearchPercentage,
+              (_bottomBarExpandedHeight) * currentBottomBarSearchPercentage,
           child: Stack(
             children: <Widget>[
               _buildBackgroundForParallexCard(context),
@@ -492,9 +492,9 @@ class _CustomBottomNavigationBar extends StatelessWidget {
       child: Opacity(
         opacity: currentBottomBarMorePercentage,
         child: Container(
-          height: (bottomBarExpandedHeight - bottomBarVisibleHeight - 10) *
+          height: (_bottomBarExpandedHeight - _bottomBarVisibleHeight - 10) *
               currentBottomBarMorePercentage,
-          // color: Colors.blue,
+          color: Colors.transparent,
           child: Stack(
             // alignment: Alignment.center,
             children: <Widget>[
@@ -582,8 +582,8 @@ class _CustomBottomNavigationBar extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Container(
         padding: EdgeInsets.only(left: 0, right: 0),
-        height: bottomBarVisibleHeight +
-            (bottomBarExpandedHeight - 0) * currentBottomBarMorePercentage,
+        height: _bottomBarVisibleHeight +
+            (_bottomBarExpandedHeight - 0) * currentBottomBarMorePercentage,
         decoration: BoxDecoration(
           color: Theme.of(context).canvasColor,
           borderRadius: BorderRadius.only(
@@ -603,7 +603,8 @@ class _CustomBottomNavigationBar extends StatelessWidget {
   Widget _buildSearchButton() {
     return Expanded(
       child: Container(
-        height: bottomBarVisibleHeight,
+        color: Colors.transparent,
+        height: _bottomBarVisibleHeight,
         child: GestureDetector(
           onPanDown: (_) => onSearchPanDown,
           onVerticalDragUpdate: onSearchVerticalDragUpdate,
@@ -657,7 +658,7 @@ class _CustomBottomNavigationBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-            height: bottomBarVisibleHeight,
+            height: _bottomBarVisibleHeight,
             child: GestureDetector(
               onPanDown: (_) => onMorePanDown,
               onVerticalDragUpdate: onMoreVerticalDragUpdate,
@@ -710,7 +711,7 @@ class _CustomBottomNavigationBar extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: (bottomBarExpandedHeight - bottomBarVisibleHeight) *
+            height: (_bottomBarExpandedHeight - _bottomBarVisibleHeight) *
                 currentBottomBarMorePercentage,
             // child: Container(
             //   color: Colors.red,
@@ -728,9 +729,11 @@ class _CustomBottomNavigationBar extends StatelessWidget {
       left: 0,
       right: 0,
       child: Container(
-        height: (bottomBarExpandedHeight - bottomBarOriginalHeight) *
+        height: (_bottomBarExpandedHeight - _bottomBarOriginalHeight) *
             currentBottomBarParallexPercentage,
-        color: Theme.of(context).canvasColor,
+        color: Theme.of(context)
+            .canvasColor
+            .withOpacity(1 - currentBottomBarSearchPercentage),
       ),
     );
   }
@@ -744,10 +747,10 @@ class _CustomBottomNavigationBar extends StatelessWidget {
           ? 0
           : (MediaQuery.of(context).size.width / 2) - 50,
       // top: 0 +
-      //     (28 + bottomBarExpandedHeight) * currentBottomBarMorePercentage +
+      //     (28 + _bottomBarExpandedHeight) * currentBottomBarMorePercentage +
       //     (28 + 350) * currentBottomBarSearchPercentage,
       bottom: 30 +
-          (bottomBarExpandedHeight - bottomBarOriginalHeight) *
+          (_bottomBarExpandedHeight - _bottomBarOriginalHeight) *
               currentBottomBarParallexPercentage -
           28 * currentBottomBarMorePercentage -
           28 * currentBottomBarSearchPercentage,
@@ -775,13 +778,18 @@ class _CustomBottomNavigationBar extends StatelessWidget {
                     _dispatchBottomBarParallexOffset();
                   },
                   child: FloatingActionButton(
-                    backgroundColor: Colors.black,
+                    backgroundColor:
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : Colors.black,
                     heroTag: 'adaojd',
                     elevation: 0,
                     onPressed: null,
                     child: Icon(
                       Icons.view_column,
-                      color: Theme.of(context).canvasColor,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? Colors.white
+                          : Colors.black,
                     ),
                   ),
                 ),
@@ -805,7 +813,7 @@ class _CustomBottomNavigationBar extends StatelessWidget {
       left: 0,
       right: 0,
       child: Container(
-        // height: (bottomBarExpandedHeight - bottomBarVisibleHeight - 10) *
+        // height: (_bottomBarExpandedHeight - _bottomBarVisibleHeight - 10) *
         //     currentBottomBarParallexPercentage,
         child: Padding(
           padding: EdgeInsets.only(bottom: 25.0),
@@ -881,11 +889,11 @@ class MoreButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.3,
-      height: (bottomBarExpandedHeight - bottomBarVisibleHeight) * 0.3,
+      height: (_bottomBarExpandedHeight - _bottomBarVisibleHeight) * 0.3,
       // color: Colors.red,
       child: model == null
           ? SizedBox()
-          : FlatButton(
+          : TextButton(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -907,7 +915,7 @@ class MoreButtons extends StatelessWidget {
                     style: ktitleStyle.copyWith(
                       // fontSize: 14,
                       fontSize: MediaQuery.of(context).size.width *
-                          0.1 *
+                          0.09 *
                           currentBottomBarMorePercentage /
                           3,
                     ),
