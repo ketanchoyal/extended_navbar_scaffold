@@ -13,3 +13,7 @@ Parallex Card Performance improved.
 ## [1.0.2] - Feb 07, 2021
 
 Added support for dark mode
+
+## [1.0.2+1] - Feb 07, 2021
+
+Minor bug fixed

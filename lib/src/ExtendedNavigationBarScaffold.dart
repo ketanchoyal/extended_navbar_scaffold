@@ -893,7 +893,7 @@ class MoreButtons extends StatelessWidget {
       // color: Colors.red,
       child: model == null
           ? SizedBox()
-          : TextButton(
+          : RawMaterialButton(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -901,7 +901,7 @@ class MoreButtons extends StatelessWidget {
                   Icon(
                     model.icon,
                     size: MediaQuery.of(context).size.width *
-                        0.33 *
+                        0.32 *
                         currentBottomBarMorePercentage /
                         3,
                     // size: 45,
