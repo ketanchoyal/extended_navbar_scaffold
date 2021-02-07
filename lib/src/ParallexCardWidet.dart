@@ -51,7 +51,7 @@ class ParallaxCardsWidget extends StatelessWidget {
 
   _buildTextContainer(BuildContext context) {
     var categoryText = _applyTextEffects(
-      translationFactor: 300.0,
+      translationFactor: 100.0,
       child: Padding(
         padding: EdgeInsets.all(3.0),
         child: Text(
@@ -67,7 +67,7 @@ class ParallaxCardsWidget extends StatelessWidget {
     );
 
     var titleText = _applyTextEffects(
-      translationFactor: 200.0,
+      translationFactor: 50.0,
       child: Padding(
         padding: EdgeInsets.all(3.0),
         child: Text(

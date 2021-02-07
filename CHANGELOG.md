@@ -9,3 +9,7 @@ Features:
 ## [1.0.1] - August 28, 2019
 
 Parallex Card Performance improved.
+
+## [1.0.2] - Frb 207, 2021
+
+Added support for dark mode
